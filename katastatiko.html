@@ -1,3 +1,6 @@
+<!-- =========================
+     2) katastatiko.html
+========================= -->
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -22,6 +25,7 @@
       --accentSoft2: rgba(22,163,74,.10);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -50,26 +54,29 @@
 
     .brand{display:flex; gap:12px; align-items:center; font-weight:900}
     .logo{
-      width:44px; height:44px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(22,163,74,.95), rgba(2,132,199,.88));
-      display:grid; place-items:center;
-      color:#052016;
-      box-shadow: 0 14px 30px rgba(2,132,199,.12);
-      font-weight:1000;
+      width:72px;
+      height:72px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(15,23,42,.10);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 14px 30px rgba(2,132,199,.10);
+    }
+
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display:block;
     }
     .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
 
     .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
     .navlinks a{padding: 10px 12px; border-radius: 14px; border: 1px solid transparent; transition: .18s ease;}
     .navlinks a:hover{border-color: var(--border); background: rgba(15,23,42,.03); color: var(--text);}
-    .navlinks .email{
-      font-weight:950;
-      color: var(--accent2);
-      border-color: rgba(2,132,199,.18);
-      background: rgba(2,132,199,.06);
-    }
-    .navlinks .email:hover{background: rgba(2,132,199,.10)}
 
     .card{
       border: 1px solid var(--border);
@@ -169,7 +176,7 @@
 
     <header class="nav">
       <div class="brand">
-        <div class="logo">ΣΑ</div>
+        <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
         <div>
           ΣΑΔΛ
           <small>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</small>
@@ -180,7 +187,7 @@
         <a href="index.html">Αρχική</a>
         <a href="katastatiko.html">Καταστατικό</a>
         <a href="anakoinoseis.html">Ανακοινώσεις</a>
-        <a href="mailto:sadlarisa2025@gmail.com" class="email">✉️ Email</a>
+        
       </nav>
     </header>
 
