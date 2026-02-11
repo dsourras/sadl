@@ -1,6 +1,3 @@
-<!-- =========================
-     3) anakoinoseis.html
-========================= -->
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -24,6 +21,7 @@
       --accentSoft: rgba(2,132,199,.10);
       --accentSoft2: rgba(22,163,74,.10);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -36,6 +34,7 @@
       color: var(--text);
       line-height: 1.65;
     }
+
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding: 18px}
 
@@ -53,6 +52,7 @@
     }
 
     .brand{display:flex; gap:12px; align-items:center; font-weight:900}
+
     .logo{
       width:72px;
       height:72px;
@@ -72,6 +72,7 @@
       padding: 6px;
       display:block;
     }
+
     .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
 
     .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
@@ -100,6 +101,46 @@
       border-left: 3px solid rgba(2,132,199,.55);
       padding-left: 12px;
     }
+
+    .filters{
+      border: 1px solid rgba(15,23,42,.10);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(2,132,199,.03);
+      margin-top: 14px;
+    }
+
+    .filterRow{
+      display:flex;
+      gap: 12px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+    }
+
+    label{display:flex; flex-direction:column; gap:6px; font-weight:900; color: var(--muted2); font-size: 13px}
+
+    select, input{
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.85);
+      outline: none;
+      font-weight: 800;
+      color: var(--text);
+      min-width: 150px;
+    }
+
+    input{min-width: 220px}
+
+    .btnSmall{
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(2,132,199,.20);
+      background: rgba(2,132,199,.06);
+      font-weight: 950;
+      cursor:pointer;
+    }
+    .btnSmall:hover{background: rgba(2,132,199,.10)}
 
     .annGrid{
       display:grid;
@@ -133,12 +174,11 @@
       padding: 12px 14px;
       border-radius: 16px;
       font-weight: 950;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(2,132,199,.20);
       transition: .18s ease;
       cursor: pointer;
       user-select:none;
       background: rgba(2,132,199,.06);
-      border-color: rgba(2,132,199,.20);
       white-space: nowrap;
     }
 
@@ -152,22 +192,8 @@
       border-top: 1px solid rgba(15,23,42,.10);
     }
 
-    .topRow{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      margin-top: 12px;
-    }
-
-    .pill{
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(22,163,74,.06);
-      font-weight: 900;
-      color: var(--muted);
+    @media (max-width: 560px){
+      select{min-width: 120px}
     }
   </style>
 </head>
@@ -188,36 +214,61 @@
         <a href="index.html">Αρχική</a>
         <a href="katastatiko.html">Καταστατικό</a>
         <a href="anakoinoseis.html">Ανακοινώσεις</a>
-        
       </nav>
     </header>
 
     <main>
       <section class="card">
         <h1>Ανακοινώσεις</h1>
-        <p>
-          Εδώ ανεβάζουμε τις ανακοινώσεις του σωματείου.
-          Κάθε ανακοίνωση έχει link προς αρχείο στο Google Drive ή Google Docs.
-        </p>
 
-        <div class="topRow">
-          <div class="pill">📌 Tip: Βάζεις link από Google Drive → "Anyone with the link"</div>
-          <div class="pill">🗂️ Αρχεία: Google Docs / PDF / Word</div>
+        <div class="filters">
+          <div class="filterRow">
+            <label>
+              Έτος
+              <select id="year">
+                <option value="all">Όλα</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+              </select>
+            </label>
+
+            <label>
+              Μήνας
+              <select id="month">
+                <option value="all">Όλοι</option>
+                <option value="01">Ιανουάριος</option>
+                <option value="02">Φεβρουάριος</option>
+                <option value="03">Μάρτιος</option>
+                <option value="04">Απρίλιος</option>
+                <option value="05">Μάιος</option>
+                <option value="06">Ιούνιος</option>
+                <option value="07">Ιούλιος</option>
+                <option value="08">Αύγουστος</option>
+                <option value="09">Σεπτέμβριος</option>
+                <option value="10">Οκτώβριος</option>
+                <option value="11">Νοέμβριος</option>
+                <option value="12">Δεκέμβριος</option>
+              </select>
+            </label>
+
+            <label style="min-width:220px; flex:1;">
+              Αναζήτηση
+              <input id="q" type="search" placeholder="Ψάξε τίτλο ή λέξεις…" />
+            </label>
+
+            <button class="btnSmall" id="clearBtn" type="button">Καθαρισμός</button>
+          </div>
+
+          <div class="notice" style="margin-top:12px;">
+            Φίλτραρε τις ανακοινώσεις ανά έτος/μήνα ή κάνε αναζήτηση.
+          </div>
         </div>
 
         <div class="hr"></div>
 
-        <!--
-          ΠΩΣ ΤΟ ΧΡΗΣΙΜΟΠΟΙΕΙΣ:
-          1) Ανέβασε ένα αρχείο στο Google Drive.
-          2) Πάρε share link.
-          3) Κάνε replace το href="..." στο κουμπί.
-          4) Αν θες νέα ανακοίνωση: κάνε copy/paste ένα block .ann
-        -->
+        <div class="annGrid" id="annGrid">
 
-        <div class="annGrid">
-
-          <div class="ann">
+          <div class="ann" data-year="2026" data-month="02">
             <div class="left">
               <div class="title">Παράδειγμα ανακοίνωσης #1</div>
               <div class="meta">Ημερομηνία: 12/02/2026</div>
@@ -228,7 +279,7 @@
             <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">Άνοιγμα στο Google Docs</a>
           </div>
 
-          <div class="ann">
+          <div class="ann" data-year="2026" data-month="02">
             <div class="left">
               <div class="title">Παράδειγμα ανακοίνωσης #2</div>
               <div class="meta">Ημερομηνία: 20/02/2026</div>
@@ -239,7 +290,7 @@
             <a class="btn" href="https://drive.google.com/" target="_blank" rel="noopener">Άνοιγμα αρχείου</a>
           </div>
 
-          <div class="ann">
+          <div class="ann" data-year="2026" data-month="03">
             <div class="left">
               <div class="title">Παράδειγμα ανακοίνωσης #3</div>
               <div class="meta">Ημερομηνία: 01/03/2026</div>
@@ -250,10 +301,6 @@
             <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">Διαβάστε</a>
           </div>
 
-        </div>
-
-        <div class="notice">
-          Αν θέλεις, μπορώ να σου βάλω και “Αρχείο Ανακοινώσεων” (μήνες/έτη) ή αναζήτηση.
         </div>
 
       </section>
@@ -268,7 +315,6 @@
   <script>
     document.getElementById("year3").textContent = new Date().getFullYear();
 
-    // --- Αρχείο Ανακοινώσεων (Φίλτρα) ---
     const yearEl = document.getElementById("year");
     const monthEl = document.getElementById("month");
     const qEl = document.getElementById("q");
@@ -279,7 +325,7 @@
       return String(s || "")
         .toLowerCase()
         .normalize("NFD")
-        .replace(/\p\{Diacritic\}/gu, "");
+        .replace(/\p{Diacritic}/gu, "");
     }
 
     function applyFilters(){
