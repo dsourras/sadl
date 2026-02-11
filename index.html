@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ΣΑΔΛ – Σωματείο Ανεξάρτητων Διανομέων Λάρισας</title>
   <meta name="description" content="Επίσημος ιστότοπος του Σωματείου Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ)." />
+
   <style>
     :root{
       --bg:#f6f8fc;
@@ -17,6 +19,7 @@
       --shadow: 0 18px 60px rgba(15,23,42,.08);
       --radius:20px;
       --max: 980px;
+
       --accent:#16a34a;
       --accent2:#0284c7;
       --accentSoft: rgba(2,132,199,.10);
@@ -38,7 +41,12 @@
     }
 
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding: 14px}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 14px
+    }
 
     /* MOBILE-FIRST HEADER */
     .nav{
@@ -87,12 +95,18 @@
 
     .brandTitle{line-height: 1.1}
     .brandTitle .name{font-size: 20px; letter-spacing: .2px}
-    .brandTitle .sub{display:block; margin-top: 3px; font-weight: 800; color: var(--muted2); font-size: 13px}
+    .brandTitle .sub{
+      display:block;
+      margin-top: 3px;
+      font-weight: 800;
+      color: var(--muted2);
+      font-size: 13px
+    }
 
     /* NAV LINKS: 3 ΚΟΥΜΠΙΑ ΣΕ MOBILE */
     .navlinks{
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 10px;
       font-weight: 950;
       color: var(--muted);
@@ -134,9 +148,18 @@
     .heroText p{margin: 0 0 12px}
     .heroText p:last-child{margin-bottom: 0}
 
-    .hr{height:1px; background: rgba(15,23,42,.10); margin: 16px 0}
+    .hr{
+      height:1px;
+      background: rgba(15,23,42,.10);
+      margin: 16px 0
+    }
 
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 14px
+    }
 
     .btn{
       display:inline-flex;
@@ -200,12 +223,52 @@
       font-size: 13px;
     }
 
+    /* FAQ */
+    .faq{margin-top:16px}
+    .faq details{
+      border:1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.70);
+      margin-bottom: 10px;
+      box-shadow: 0 10px 30px rgba(15,23,42,.05);
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight: 1000;
+      color: var(--text);
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{
+      content:"+";
+      font-weight: 1000;
+      font-size: 18px;
+      color: var(--muted2);
+    }
+    .faq details[open] summary::after{content:"–"}
+    .faq .answer{
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 14px;
+    }
+
     /* ΒΕΛΤΙΩΣΗ ΓΙΑ ΜΕΓΑΛΑ ΚΙΝΗΤΑ / TABLETS */
     @media (min-width: 900px){
       .nav{flex-direction: row; align-items:center; justify-content:space-between}
       .navlinks{grid-template-columns: auto auto auto}
       .wrap{padding: 18px}
-      .mainGrid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 16px; margin-top: 16px}
+      .mainGrid{
+        display:grid;
+        grid-template-columns: 1.2fr .8fr;
+        gap: 16px;
+        margin-top: 16px
+      }
       .card{margin-top: 0}
     }
   </style>
@@ -216,7 +279,9 @@
 
     <header class="nav">
       <div class="brand">
-        <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
+        <div class="logo">
+          <img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" />
+        </div>
         <div class="brandTitle">
           <div class="name">ΣΑΔΛ</div>
           <span class="sub">Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span>
@@ -224,14 +289,14 @@
       </div>
 
       <nav class="navlinks">
-        <a href="index.html">Αρχική</a>
-        <a href="katastatiko.html">Καταστατικό</a>
-        <a href="anakoinoseis.html">Ανακοινώσεις</a>
-      </nav>
+  <a href="index.html">Αρχική</a>
+  <a href="#faq">FAQ</a>
+  <a href="katastatiko.html">Καταστατικό</a>
+  <a href="anakoinoseis.html">Ανακοινώσεις</a>
+</nav>
     </header>
 
     <main>
-
       <div class="mainGrid">
 
         <section class="card">
@@ -242,28 +307,27 @@
 
           <div class="heroText">
             <p>
-              Το Σωματείο Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ) είναι ένα μη κερδοσκοπικό σωματείο, με έδρα
-              τον Δήμο Λαρισαίων, το οποίο δημιουργήθηκε για να εκπροσωπεί και να στηρίζει τους
-              <strong>αυτοαπασχολούμενους / freelancers διανομείς</strong> (delivery) που δραστηριοποιούνται στην
-              πόλη και στην ευρύτερη περιοχή.
+              Το Σωματείο Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ) είναι ένα μη κερδοσκοπικό σωματείο, με έδρα τον Δήμο Λαρισαίων,
+              το οποίο δημιουργήθηκε για να εκπροσωπεί και να στηρίζει τους <strong>αυτοαπασχολούμενους / freelancers διανομείς</strong>
+              (delivery) που δραστηριοποιούνται στην πόλη και στην ευρύτερη περιοχή.
             </p>
 
             <p>
-              Η καθημερινότητα του διανομέα περιλαμβάνει ζητήματα που αφορούν την οδική ασφάλεια,
-              τις συνθήκες εργασίας σε ακραία καιρικά φαινόμενα, τα έξοδα χρήσης και συντήρησης του οχήματος,
-              αλλά και την ανάγκη για διαφάνεια και σεβασμό στον τρόπο συνεργασίας των ανεξάρτητων διανομέων.
+              Η καθημερινότητα του διανομέα περιλαμβάνει ζητήματα που αφορούν την οδική ασφάλεια, τις συνθήκες εργασίας σε ακραία
+              καιρικά φαινόμενα, τα έξοδα χρήσης και συντήρησης του οχήματος, αλλά και την ανάγκη για διαφάνεια και σεβασμό στον τρόπο
+              συνεργασίας των ανεξάρτητων διανομέων.
             </p>
 
             <p>
-              Σκοπός του σωματείου είναι να λειτουργεί ως συλλογική φωνή, να ενισχύει την αλληλεγγύη,
-              να ενημερώνει υπεύθυνα τα μέλη του, να παρεμβαίνει όπου χρειάζεται και να προωθεί λύσεις που
-              βελτιώνουν την καθημερινότητα του επαγγέλματος, με γνώμονα την αξιοπρέπεια και την ασφάλεια.
+              Σκοπός του σωματείου είναι να λειτουργεί ως συλλογική φωνή, να ενισχύει την αλληλεγγύη, να ενημερώνει υπεύθυνα τα μέλη του,
+              να παρεμβαίνει όπου χρειάζεται και να προωθεί λύσεις που βελτιώνουν την καθημερινότητα του επαγγέλματος,
+              με γνώμονα την αξιοπρέπεια και την ασφάλεια.
             </p>
 
             <p>
-              Παράλληλα, το ΣΑΔΛ στηρίζει την οργάνωση και τη συμμετοχή των μελών, τη διεκδίκηση δίκαιων όρων
-              συνεργασίας, την προστασία των επαγγελματικών και ασφαλιστικών δικαιωμάτων, καθώς και την
-              αναγνώριση της πραγματικής εργασίας που προσφέρει ο διανομέας στην τοπική κοινωνία.
+              Παράλληλα, το ΣΑΔΛ στηρίζει την οργάνωση και τη συμμετοχή των μελών, τη διεκδίκηση δίκαιων όρων συνεργασίας,
+              την προστασία των επαγγελματικών και ασφαλιστικών δικαιωμάτων, καθώς και την αναγνώριση της πραγματικής εργασίας
+              που προσφέρει ο διανομέας στην τοπική κοινωνία.
             </p>
           </div>
 
@@ -273,9 +337,115 @@
           </div>
 
           <div class="notice">
-            Για το πλήρες πλαίσιο λειτουργίας, δικαιωμάτων, υποχρεώσεων και οργάνων διοίκησης, ισχύει το
-            επίσημο καταστατικό του σωματείου.
+            Για το πλήρες πλαίσιο λειτουργίας, δικαιωμάτων, υποχρεώσεων και οργάνων διοίκησης, ισχύει το επίσημο καταστατικό του σωματείου.
           </div>
+
+          <!-- FAQ (ΜΕΣΑ ΣΤΟ INDEX.HTML) -->
+          <div class="hr"></div>
+
+          <section class="faq" id="faq">
+            <h2>Συχνές Ερωτήσεις</h2>
+
+            <details>
+              <summary>Τι είναι το ΣΑΔΛ;</summary>
+              <div class="answer">
+                Το ΣΑΔΛ είναι μη κερδοσκοπικό σωματείο με έδρα τον Δήμο Λαρισαίων, που δημιουργήθηκε για να εκπροσωπεί και να στηρίζει
+                τους αυτοαπασχολούμενους / freelancers διανομείς (delivery) της περιοχής.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ποιοι είναι οι βασικοί σκοποί του Σωματείου;</summary>
+              <div class="answer">
+                Βασικοί σκοποί είναι: η προάσπιση των επαγγελματικών και εργασιακών συμφερόντων των διανομέων, η ενίσχυση της αλληλεγγύης,
+                η υπεύθυνη ενημέρωση των μελών, η οδική ασφάλεια, η παρέμβαση προς αρμόδιους φορείς και η προώθηση λύσεων που βελτιώνουν
+                την καθημερινότητα του επαγγέλματος.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ποιος μπορεί να γίνει μέλος;</summary>
+              <div class="answer">
+                Μέλος μπορεί να γίνει κάθε φυσικό πρόσωπο που είναι αυτοαπασχολούμενος διανομέας (delivery) και δραστηριοποιείται
+                στην περιοχή του Δήμου Λαρισαίων. Αφορά διανομείς που εργάζονται ως ανεξάρτητοι συνεργάτες και είναι ασφαλισμένοι στον ΕΦΚΑ
+                ως ελεύθεροι επαγγελματίες, συμπεριλαμβανομένων όσων συνεργάζονται με Ψηφιακές Ηλεκτρονικές Πλατφόρμες.
+              </div>
+            </details>
+
+            <details>
+              <summary>Πώς γίνεται η εγγραφή στο ΣΑΔΛ;</summary>
+              <div class="answer">
+                Η εγγραφή γίνεται με αίτηση (ηλεκτρονικά ή έντυπα) προς το Σωματείο. Η αίτηση περιλαμβάνει τα στοιχεία του ενδιαφερόμενου
+                και δήλωση ότι αποδέχεται το καταστατικό. Την αίτηση εξετάζει το Διοικητικό Συμβούλιο.
+              </div>
+            </details>
+
+            <details>
+              <summary>Σε πόσο χρόνο απαντάτε για την εγγραφή;</summary>
+              <div class="answer">
+                Το Διοικητικό Συμβούλιο εξετάζει την αίτηση και αποφασίζει. Σε περίπτωση που η αίτηση απορριφθεί, ο ενδιαφερόμενος έχει
+                δικαίωμα προσφυγής στη Γενική Συνέλευση, η οποία αποφασίζει τελικά.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ποια δικαιώματα έχουν τα μέλη;</summary>
+              <div class="answer">
+                Τα μέλη έχουν δικαίωμα συμμετοχής στις Γενικές Συνελεύσεις, λόγου και ψήφου, καθώς και δικαίωμα να εκλέγουν και να εκλέγονται
+                στα όργανα του Σωματείου, εφόσον είναι οικονομικά τακτοποιημένα.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ποιες είναι οι βασικές υποχρεώσεις των μελών;</summary>
+              <div class="answer">
+                Τα μέλη οφείλουν να τηρούν το καταστατικό, να σέβονται τις αποφάσεις των οργάνων του Σωματείου, να συμβάλλουν στην επίτευξη
+                των σκοπών του και να είναι οικονομικά τακτοποιημένα (συνδρομές).
+              </div>
+            </details>
+
+            <details>
+              <summary>Υπάρχει συνδρομή ή κόστος εγγραφής;</summary>
+              <div class="answer">
+                Ναι. Προβλέπεται δικαίωμα εγγραφής και ετήσια συνδρομή. Τα ποσά και οι προθεσμίες καθορίζονται με αποφάσεις των οργάνων
+                του Σωματείου.
+              </div>
+            </details>
+
+            <details>
+              <summary>Μπορώ να αποχωρήσω από το Σωματείο;</summary>
+              <div class="answer">
+                Ναι. Η αποχώρηση γίνεται με γραπτή δήλωση προς το Διοικητικό Συμβούλιο και διαγραφή από το μητρώο μελών.
+                Τυχόν οικονομικές εκκρεμότητες παραμένουν μέχρι την τακτοποίησή τους.
+              </div>
+            </details>
+
+            <details>
+              <summary>Πότε μπορεί να διαγραφεί ή να αποβληθεί ένα μέλος;</summary>
+              <div class="answer">
+                Διαγραφή ή αποβολή μπορεί να γίνει για σοβαρούς λόγους, όπως παραβίαση του καταστατικού, ενέργειες που πλήττουν το Σωματείο,
+                αντιδεοντολογική συμπεριφορά ή παρατεταμένη οικονομική ασυνέπεια. Προβλέπεται διαδικασία ενημέρωσης και δικαίωμα υπεράσπισης.
+              </div>
+            </details>
+
+            <details>
+              <summary>Πώς χρηματοδοτείται το Σωματείο;</summary>
+              <div class="answer">
+                Οι πόροι του Σωματείου προέρχονται από δικαίωμα εγγραφής, ετήσιες συνδρομές, δωρεές/χορηγίες, έσοδα από εκδηλώσεις και άλλες
+                νόμιμες εισφορές που εγκρίνονται από τα όργανα του Σωματείου.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ποια είναι τα όργανα του Σωματείου;</summary>
+              <div class="answer">
+                Τα βασικά όργανα είναι: η Γενική Συνέλευση, το Διοικητικό Συμβούλιο και η Ελεγκτική Επιτροπή.
+              </div>
+            </details>
+
+          </section>
+          <!-- /FAQ -->
+
         </section>
 
         <aside class="card">
@@ -284,12 +454,20 @@
           <div class="kpi">
             <div class="kpiBox">
               <div class="label">Email</div>
-              <div class="value"><a href="mailto:sadlarisa2025@gmail.com" style="text-decoration:underline;">sadlarisa2025@gmail.com</a></div>
+              <div class="value">
+                <a href="mailto:sadlarisa2025@gmail.com" style="text-decoration:underline;">
+                  sadlarisa2025@gmail.com
+                </a>
+              </div>
             </div>
 
             <div class="kpiBox">
               <div class="label">Τηλέφωνο</div>
-              <div class="value"><a href="tel:+306983514687" style="text-decoration:underline;">698 351 4687</a></div>
+              <div class="value">
+                <a href="tel:+306983514687" style="text-decoration:underline;">
+                  698 351 4687
+                </a>
+              </div>
             </div>
 
             <div class="kpiBox">
@@ -311,7 +489,6 @@
       </footer>
 
     </main>
-
   </div>
 
   <script>
