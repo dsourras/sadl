@@ -1,3 +1,4 @@
+<!-- anakoinoseis.html -->
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -14,8 +15,8 @@
       --muted2:#64748b;
       --border:rgba(15,23,42,.10);
       --shadow: 0 18px 60px rgba(15,23,42,.08);
-      --radius:18px;
-      --max: 1120px;
+      --radius:20px;
+      --max: 980px;
       --accent:#16a34a;
       --accent2:#0284c7;
       --accentSoft: rgba(2,132,199,.10);
@@ -24,6 +25,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -36,48 +38,75 @@
     }
 
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding: 18px}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 14px}
 
     .nav{
-      display:flex; align-items:center; justify-content:space-between; gap: 12px;
-      padding:14px 16px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 14px;
       border:1px solid var(--border);
       background: rgba(255,255,255,.78);
       backdrop-filter: blur(10px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       position: sticky;
-      top: 14px;
+      top: 10px;
       z-index: 10;
     }
 
-    .brand{display:flex; gap:12px; align-items:center; font-weight:900}
+    .brand{
+      display:flex;
+      gap: 12px;
+      align-items:center;
+      font-weight: 950;
+    }
 
     .logo{
-      width:72px;
-      height:72px;
-      border-radius: 18px;
+      width: 92px;
+      height: 92px;
+      border-radius: 22px;
       overflow: hidden;
       background: rgba(255,255,255,.92);
       border: 1px solid rgba(15,23,42,.10);
       display:grid;
       place-items:center;
       box-shadow: 0 14px 30px rgba(2,132,199,.10);
+      flex: 0 0 auto;
     }
 
     .logo img{
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 6px;
+      padding: 8px;
       display:block;
     }
 
-    .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
+    .brandTitle{line-height: 1.1}
+    .brandTitle .name{font-size: 20px; letter-spacing: .2px}
+    .brandTitle .sub{display:block; margin-top: 3px; font-weight: 800; color: var(--muted2); font-size: 13px}
 
-    .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
-    .navlinks a{padding: 10px 12px; border-radius: 14px; border: 1px solid transparent; transition: .18s ease;}
-    .navlinks a:hover{border-color: var(--border); background: rgba(15,23,42,.03); color: var(--text);}
+    .navlinks{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      font-weight: 950;
+      color: var(--muted);
+    }
+
+    .navlinks a{
+      padding: 12px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.6);
+      transition: .18s ease;
+      text-align:center;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .navlinks a:active{transform: scale(.98)}
 
     .card{
       border: 1px solid var(--border);
@@ -85,14 +114,14 @@
       backdrop-filter: blur(10px);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px;
-      margin-top: 16px;
+      padding: 18px;
+      margin-top: 14px;
     }
 
-    h1{margin:0 0 8px; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.2}
+    h1{margin:0 0 8px; font-size: 24px; line-height: 1.2}
     p{margin:0; color: var(--muted)}
 
-    .hr{height:1px; background: rgba(15,23,42,.10); margin: 18px 0}
+    .hr{height:1px; background: rgba(15,23,42,.10); margin: 16px 0}
 
     .notice{
       font-size: 13px;
@@ -112,35 +141,41 @@
 
     .filterRow{
       display:flex;
+      flex-direction: column;
       gap: 12px;
-      align-items:flex-end;
-      flex-wrap:wrap;
     }
 
-    label{display:flex; flex-direction:column; gap:6px; font-weight:900; color: var(--muted2); font-size: 13px}
+    label{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-weight:900;
+      color: var(--muted2);
+      font-size: 13px
+    }
 
     select, input{
-      padding: 11px 12px;
-      border-radius: 14px;
+      padding: 12px 12px;
+      border-radius: 16px;
       border: 1px solid rgba(15,23,42,.12);
       background: rgba(255,255,255,.85);
       outline: none;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--text);
-      min-width: 150px;
+      width: 100%;
     }
-
-    input{min-width: 220px}
 
     .btnSmall{
-      padding: 11px 12px;
-      border-radius: 14px;
+      padding: 12px 12px;
+      border-radius: 16px;
       border: 1px solid rgba(2,132,199,.20);
       background: rgba(2,132,199,.06);
-      font-weight: 950;
+      font-weight: 1000;
       cursor:pointer;
+      width: 100%;
     }
-    .btnSmall:hover{background: rgba(2,132,199,.10)}
+
+    .btnSmall:active{transform: scale(.99)}
 
     .annGrid{
       display:grid;
@@ -155,13 +190,10 @@
       padding: 16px;
       background: rgba(255,255,255,.7);
       display:flex;
-      gap: 14px;
-      align-items:flex-start;
-      justify-content:space-between;
-      flex-wrap:wrap;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .ann .left{min-width: 240px; flex: 1}
     .ann .title{font-weight: 1000; margin-bottom: 4px}
     .ann .meta{color: var(--muted2); font-weight: 850; font-size: 13px}
     .ann .desc{color: var(--muted); margin-top: 8px}
@@ -171,29 +203,37 @@
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      font-weight: 950;
+      padding: 13px 14px;
+      border-radius: 18px;
+      font-weight: 1000;
       border: 1px solid rgba(2,132,199,.20);
       transition: .18s ease;
       cursor: pointer;
       user-select:none;
       background: rgba(2,132,199,.06);
       white-space: nowrap;
+      width: 100%;
     }
 
-    .btn:hover{background: rgba(2,132,199,.10)}
+    .btn:active{transform: scale(.99)}
 
     .footer{
-      margin: 26px 0 18px;
-      padding: 16px;
+      margin: 22px 0 16px;
+      padding: 14px;
       text-align:center;
       color: var(--muted2);
       border-top: 1px solid rgba(15,23,42,.10);
+      font-size: 13px;
     }
 
-    @media (max-width: 560px){
-      select{min-width: 120px}
+    @media (min-width: 900px){
+      .nav{flex-direction: row; align-items:center; justify-content:space-between}
+      .navlinks{grid-template-columns: auto auto auto}
+      .wrap{padding: 18px}
+      .filterRow{flex-direction: row; align-items:flex-end; flex-wrap:wrap}
+      .btnSmall{width:auto}
+      .ann{flex-direction: row; justify-content:space-between; align-items:flex-start}
+      .btn{width:auto}
     }
   </style>
 </head>
@@ -204,9 +244,9 @@
     <header class="nav">
       <div class="brand">
         <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
-        <div>
-          ΣΑΔΛ
-          <small>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</small>
+        <div class="brandTitle">
+          <div class="name">ΣΑΔΛ</div>
+          <span class="sub">Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span>
         </div>
       </div>
 
@@ -251,7 +291,7 @@
               </select>
             </label>
 
-            <label style="min-width:220px; flex:1;">
+            <label>
               Αναζήτηση
               <input id="q" type="search" placeholder="Ψάξε τίτλο ή λέξεις…" />
             </label>
@@ -269,7 +309,7 @@
         <div class="annGrid" id="annGrid">
 
           <div class="ann" data-year="2026" data-month="02">
-            <div class="left">
+            <div>
               <div class="title">Παράδειγμα ανακοίνωσης #1</div>
               <div class="meta">Ημερομηνία: 12/02/2026</div>
               <div class="desc">
@@ -280,7 +320,7 @@
           </div>
 
           <div class="ann" data-year="2026" data-month="02">
-            <div class="left">
+            <div>
               <div class="title">Παράδειγμα ανακοίνωσης #2</div>
               <div class="meta">Ημερομηνία: 20/02/2026</div>
               <div class="desc">
@@ -291,7 +331,7 @@
           </div>
 
           <div class="ann" data-year="2026" data-month="03">
-            <div class="left">
+            <div>
               <div class="title">Παράδειγμα ανακοίνωσης #3</div>
               <div class="meta">Ημερομηνία: 01/03/2026</div>
               <div class="desc">
