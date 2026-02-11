@@ -45,7 +45,7 @@
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding: 14px
+      padding: 14px;
     }
 
     /* MOBILE-FIRST HEADER */
@@ -100,21 +100,21 @@
       margin-top: 3px;
       font-weight: 800;
       color: var(--muted2);
-      font-size: 13px
+      font-size: 13px;
     }
 
-    /* NAV LINKS: 3 ΚΟΥΜΠΙΑ ΣΕ MOBILE */
+    /* NAV LINKS: ΠΑΝΤΑ 2x2 ΣΕ ΚΙΝΗΤΟ (ΔΕΝ ΞΕΦΕΥΓΕΙ ΠΟΤΕ) */
     .navlinks{
       display:grid;
-     grid-template-columns: 1fr 1fr 1fr 1fr;
-
+      grid-template-columns: 1fr 1fr;
       gap: 10px;
       font-weight: 950;
       color: var(--muted);
+      width: 100%;
     }
 
     .navlinks a{
-      padding: 12px 10px;
+      padding: 10px 8px;
       border-radius: 16px;
       border: 1px solid rgba(15,23,42,.10);
       background: rgba(255,255,255,.6);
@@ -152,14 +152,14 @@
     .hr{
       height:1px;
       background: rgba(15,23,42,.10);
-      margin: 16px 0
+      margin: 16px 0;
     }
 
     .ctaRow{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 14px
+      margin-top: 14px;
     }
 
     .btn{
@@ -259,17 +259,29 @@
       font-size: 14px;
     }
 
-    /* ΒΕΛΤΙΩΣΗ ΓΙΑ ΜΕΓΑΛΑ ΚΙΝΗΤΑ / TABLETS */
+    /* TABLET/DESKTOP */
     @media (min-width: 900px){
-      .nav{flex-direction: row; align-items:center; justify-content:space-between}
-      .navlinks{grid-template-columns: auto auto auto}
       .wrap{padding: 18px}
+
+      .nav{
+        flex-direction: row;
+        align-items:center;
+        justify-content:space-between;
+      }
+
+      /* ΣΕ DESKTOP ΘΕΛΟΥΜΕ ΟΛΑ ΣΕ 1 ΓΡΑΜΜΗ */
+      .navlinks{
+        grid-template-columns: auto auto auto auto;
+        width: auto;
+      }
+
       .mainGrid{
         display:grid;
         grid-template-columns: 1.2fr .8fr;
         gap: 16px;
-        margin-top: 16px
+        margin-top: 16px;
       }
+
       .card{margin-top: 0}
     }
   </style>
@@ -290,12 +302,11 @@
       </div>
 
       <nav class="navlinks">
- <nav class="navlinks">
-  <a href="index.html">Αρχική</a>
-  <a href="#faq">FAQ</a>
-  <a href="katastatiko.html">Καταστατικό</a>
-  <a href="anakoinoseis.html">Ανακοινώσεις</a>
-</nav>
+        <a href="index.html">Αρχική</a>
+        <a href="#faq">FAQ</a>
+        <a href="katastatiko.html">Καταστατικό</a>
+        <a href="anakoinoseis.html">Ανακοινώσεις</a>
+      </nav>
     </header>
 
     <main>
@@ -342,7 +353,6 @@
             Για το πλήρες πλαίσιο λειτουργίας, δικαιωμάτων, υποχρεώσεων και οργάνων διοίκησης, ισχύει το επίσημο καταστατικό του σωματείου.
           </div>
 
-          <!-- FAQ (ΜΕΣΑ ΣΤΟ INDEX.HTML) -->
           <div class="hr"></div>
 
           <section class="faq" id="faq">
@@ -446,7 +456,6 @@
             </details>
 
           </section>
-          <!-- /FAQ -->
 
         </section>
 
