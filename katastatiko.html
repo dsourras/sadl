@@ -1,6 +1,3 @@
-<!-- =========================
-     2) katastatiko.html
-========================= -->
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -24,8 +21,8 @@
       --accentSoft: rgba(2,132,199,.10);
       --accentSoft2: rgba(22,163,74,.10);
     }
+
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -36,6 +33,7 @@
       color: var(--text);
       line-height: 1.65;
     }
+
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding: 18px}
 
@@ -53,6 +51,7 @@
     }
 
     .brand{display:flex; gap:12px; align-items:center; font-weight:900}
+
     .logo{
       width:72px;
       height:72px;
@@ -72,6 +71,7 @@
       padding: 6px;
       display:block;
     }
+
     .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
 
     .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
@@ -101,22 +101,15 @@
       padding: 12px 14px;
       border-radius: 16px;
       font-weight: 950;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(2,132,199,.20);
       transition: .18s ease;
       cursor: pointer;
       user-select:none;
-      background: rgba(255,255,255,.8);
+      background: rgba(2,132,199,.06);
+      white-space: nowrap;
     }
 
-    .btn:hover{background: rgba(255,255,255,1)}
-
-    .btnPrimary{
-      background: linear-gradient(135deg, rgba(22,163,74,.95), rgba(2,132,199,.88));
-      color: #052016;
-      border-color: transparent;
-    }
-
-    .btnPrimary:hover{transform: translateY(-1px)}
+    .btn:hover{background: rgba(2,132,199,.10)}
 
     .two{
       display:grid;
@@ -132,7 +125,7 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 16px;
-      background: rgba(2,132,199,.04);
+      background: rgba(255,255,255,.7);
     }
 
     .miniTitle{font-weight: 1000; margin-bottom: 6px}
@@ -143,14 +136,6 @@
       color: var(--muted);
     }
 
-    .notice{
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 12px;
-      border-left: 3px solid rgba(2,132,199,.55);
-      padding-left: 12px;
-    }
-
     .footer{
       margin: 26px 0 18px;
       padding: 16px;
@@ -158,16 +143,6 @@
       color: var(--muted2);
       border-top: 1px solid rgba(15,23,42,.10);
     }
-
-    .pdfBox{
-      border: 1px dashed rgba(15,23,42,.18);
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,.7);
-      margin-top: 14px;
-    }
-
-    .pdfBox code{font-weight: 900}
   </style>
 </head>
 
@@ -187,30 +162,19 @@
         <a href="index.html">Αρχική</a>
         <a href="katastatiko.html">Καταστατικό</a>
         <a href="anakoinoseis.html">Ανακοινώσεις</a>
-        
       </nav>
     </header>
 
     <main>
       <section class="card">
-        <h1>Καταστατικό Σωματείου</h1>
+        <h1>Καταστατικό</h1>
         <p>
-          Στη σελίδα αυτή θα βρείτε μια σύντομη σύνοψη των βασικών άρθρων του καταστατικού,
-          καθώς και επιλογή για να ανεβάσετε το πλήρες αρχείο PDF.
+          Το πλήρες κείμενο του καταστατικού είναι διαθέσιμο στον παρακάτω σύνδεσμο.
         </p>
 
-        <div class="pdfBox">
-          <div style="font-weight:1000; margin-bottom:6px;">📄 Πλήρες Καταστατικό (PDF)</div>
-          <div class="notice" style="margin-top:0;">
-            Ανέβασε το PDF στο ίδιο GitHub repo και ονόμασέ το <code>katastatiko.pdf</code>.
-            Μετά το κουμπί θα λειτουργεί αυτόματα.
-          </div>
+        <div class="hr"></div>
 
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btnPrimary" href="katastatiko.pdf" target="_blank" rel="noopener">Άνοιγμα PDF</a>
-            <a class="btn" href="katastatiko.pdf" download>Λήψη PDF</a>
-          </div>
-        </div>
+        <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">📄 Άνοιγμα Καταστατικού</a>
 
         <div class="hr"></div>
 
@@ -255,10 +219,6 @@
           </div>
         </div>
 
-        <div class="notice">
-          Η σύνοψη είναι ενημερωτική.
-          Για πλήρη νομική πληροφόρηση ισχύει αποκλειστικά το επίσημο καταστατικό (PDF).
-        </div>
       </section>
 
       <footer class="footer">
