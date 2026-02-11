@@ -267,6 +267,53 @@
 
   <script>
     document.getElementById("year3").textContent = new Date().getFullYear();
+
+    // --- Αρχείο Ανακοινώσεων (Φίλτρα) ---
+    const yearEl = document.getElementById("year");
+    const monthEl = document.getElementById("month");
+    const qEl = document.getElementById("q");
+    const clearBtn = document.getElementById("clearBtn");
+    const grid = document.getElementById("annGrid");
+
+    function norm(s){
+      return String(s || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/\p\{Diacritic\}/gu, "");
+    }
+
+    function applyFilters(){
+      const y = yearEl ? yearEl.value : "all";
+      const m = monthEl ? monthEl.value : "all";
+      const q = norm(qEl ? qEl.value : "");
+
+      const items = grid ? grid.querySelectorAll(".ann") : [];
+
+      items.forEach(el => {
+        const ey = el.getAttribute("data-year") || "";
+        const em = el.getAttribute("data-month") || "";
+        const text = norm(el.innerText);
+
+        const okYear = (y === "all") || (ey === y);
+        const okMonth = (m === "all") || (em === m);
+        const okQ = (!q) || text.includes(q);
+
+        el.style.display = (okYear && okMonth && okQ) ? "flex" : "none";
+      });
+    }
+
+    if(yearEl) yearEl.addEventListener("change", applyFilters);
+    if(monthEl) monthEl.addEventListener("change", applyFilters);
+    if(qEl) qEl.addEventListener("input", applyFilters);
+
+    if(clearBtn) clearBtn.addEventListener("click", () => {
+      if(yearEl) yearEl.value = "all";
+      if(monthEl) monthEl.value = "all";
+      if(qEl) qEl.value = "";
+      applyFilters();
+    });
+
+    applyFilters();
   </script>
 </body>
 </html>
