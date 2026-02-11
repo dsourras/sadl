@@ -1,3 +1,6 @@
+<!-- =========================
+     3) anakoinoseis.html
+========================= -->
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -22,6 +25,7 @@
       --accentSoft2: rgba(22,163,74,.10);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -50,26 +54,29 @@
 
     .brand{display:flex; gap:12px; align-items:center; font-weight:900}
     .logo{
-      width:44px; height:44px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(22,163,74,.95), rgba(2,132,199,.88));
-      display:grid; place-items:center;
-      color:#052016;
-      box-shadow: 0 14px 30px rgba(2,132,199,.12);
-      font-weight:1000;
+      width:72px;
+      height:72px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(15,23,42,.10);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 14px 30px rgba(2,132,199,.10);
+    }
+
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display:block;
     }
     .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
 
     .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
     .navlinks a{padding: 10px 12px; border-radius: 14px; border: 1px solid transparent; transition: .18s ease;}
     .navlinks a:hover{border-color: var(--border); background: rgba(15,23,42,.03); color: var(--text);}
-    .navlinks .email{
-      font-weight:950;
-      color: var(--accent2);
-      border-color: rgba(2,132,199,.18);
-      background: rgba(2,132,199,.06);
-    }
-    .navlinks .email:hover{background: rgba(2,132,199,.10)}
 
     .card{
       border: 1px solid var(--border);
@@ -126,11 +133,12 @@
       padding: 12px 14px;
       border-radius: 16px;
       font-weight: 950;
-      border: 1px solid rgba(2,132,199,.20);
+      border: 1px solid var(--border);
       transition: .18s ease;
       cursor: pointer;
       user-select:none;
       background: rgba(2,132,199,.06);
+      border-color: rgba(2,132,199,.20);
       white-space: nowrap;
     }
 
@@ -169,7 +177,7 @@
 
     <header class="nav">
       <div class="brand">
-        <div class="logo">ΣΑ</div>
+        <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
         <div>
           ΣΑΔΛ
           <small>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</small>
@@ -180,7 +188,7 @@
         <a href="index.html">Αρχική</a>
         <a href="katastatiko.html">Καταστατικό</a>
         <a href="anakoinoseis.html">Ανακοινώσεις</a>
-        <a href="mailto:sadlarisa2025@gmail.com" class="email">✉️ Email</a>
+        
       </nav>
     </header>
 
@@ -193,11 +201,19 @@
         </p>
 
         <div class="topRow">
-          <div class="pill">📌 Tip: Google Drive → “Anyone with the link”</div>
+          <div class="pill">📌 Tip: Βάζεις link από Google Drive → "Anyone with the link"</div>
           <div class="pill">🗂️ Αρχεία: Google Docs / PDF / Word</div>
         </div>
 
         <div class="hr"></div>
+
+        <!--
+          ΠΩΣ ΤΟ ΧΡΗΣΙΜΟΠΟΙΕΙΣ:
+          1) Ανέβασε ένα αρχείο στο Google Drive.
+          2) Πάρε share link.
+          3) Κάνε replace το href="..." στο κουμπί.
+          4) Αν θες νέα ανακοίνωση: κάνε copy/paste ένα block .ann
+        -->
 
         <div class="annGrid">
 
@@ -209,9 +225,7 @@
                 Εδώ γράφεις 2-3 γραμμές περιγραφή για την ανακοίνωση.
               </div>
             </div>
-            <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">
-              Άνοιγμα στο Google Docs
-            </a>
+            <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">Άνοιγμα στο Google Docs</a>
           </div>
 
           <div class="ann">
@@ -222,9 +236,7 @@
                 Αν το αρχείο είναι PDF στο Drive, πάλι βάζεις το link εδώ.
               </div>
             </div>
-            <a class="btn" href="https://drive.google.com/" target="_blank" rel="noopener">
-              Άνοιγμα αρχείου
-            </a>
+            <a class="btn" href="https://drive.google.com/" target="_blank" rel="noopener">Άνοιγμα αρχείου</a>
           </div>
 
           <div class="ann">
@@ -235,15 +247,13 @@
                 Κάθε ανακοίνωση είναι ένα πλαίσιο. Πολύ εύκολο update.
               </div>
             </div>
-            <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">
-              Διαβάστε
-            </a>
+            <a class="btn" href="https://docs.google.com/" target="_blank" rel="noopener">Διαβάστε</a>
           </div>
 
         </div>
 
         <div class="notice">
-          Για νέα ανακοίνωση: κάνεις copy/paste ένα block και αλλάζεις ημερομηνία + link.
+          Αν θέλεις, μπορώ να σου βάλω και “Αρχείο Ανακοινώσεων” (μήνες/έτη) ή αναζήτηση.
         </div>
 
       </section>
