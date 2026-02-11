@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ΣΑΔΛ – Σωματείο Ανεξάρτητων Διανομέων Λάρισας</title>
+  <meta name="description" content="Επίσημος ιστότοπος του Σωματείου Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ)." />
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --border:rgba(15,23,42,.10);
+      --shadow: 0 18px 60px rgba(15,23,42,.08);
+      --radius:18px;
+      --max: 1120px;
+      --accent:#16a34a;
+      --accent2:#0284c7;
+      --accentSoft: rgba(2,132,199,.10);
+      --accentSoft2: rgba(22,163,74,.10);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 520px at 10% 10%, var(--accentSoft2), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, var(--accentSoft), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px}
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding:14px 16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
+
+    .brand{display:flex; gap:12px; align-items:center; font-weight:900}
+
+    .logo{
+      width:44px; height:44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(22,163,74,.95), rgba(2,132,199,.88));
+      display:grid; place-items:center;
+      color:#052016;
+      box-shadow: 0 14px 30px rgba(2,132,199,.12);
+      font-weight:1000;
+      letter-spacing:.2px;
+    }
+
+    .brand small{display:block; font-weight:650; color: var(--muted2); margin-top:2px}
+
+    .navlinks{display:flex; gap:10px; flex-wrap:wrap; font-weight:750; color: var(--muted)}
+    .navlinks a{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      transition: .18s ease;
+    }
+    .navlinks a:hover{
+      border-color: var(--border);
+      background: rgba(15,23,42,.03);
+      color: var(--text);
+    }
+    .navlinks .email{
+      font-weight:950;
+      color: var(--accent2);
+      border-color: rgba(2,132,199,.18);
+      background: rgba(2,132,199,.06);
+    }
+    .navlinks .email:hover{background: rgba(2,132,199,.10)}
+
+    .hero{margin-top: 18px; padding: 18px 0 6px}
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 960px){
+      .heroGrid{grid-template-columns: 1fr}
+      .nav{position:relative; top:auto}
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    h1{margin:0 0 10px; font-size: clamp(26px, 3vw, 42px); line-height: 1.15}
+    .subtitle{color: var(--muted); font-size: 16px; margin-bottom: 18px}
+
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px}
+
+    .badge{
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(2,132,199,.05);
+      color: var(--muted);
+      font-weight: 750;
+      font-size: 13px;
+    }
+
+    .badge strong{color: var(--text)}
+
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 18px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-weight: 900;
+      border: 1px solid var(--border);
+      transition: .18s ease;
+      cursor: pointer;
+      user-select:none;
+    }
+
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(22,163,74,.95), rgba(2,132,199,.88));
+      color: #052016;
+      border-color: transparent;
+    }
+    .btnPrimary:hover{transform: translateY(-1px)}
+    .btnGhost{background: rgba(255,255,255,.7)}
+    .btnGhost:hover{background: rgba(255,255,255,1)}
+
+    .section{padding: 12px 0 0}
+    .section h2{margin:0 0 10px; font-size: 20px}
+    .section p{margin:0; color: var(--muted)}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 960px){
+      .grid3{grid-template-columns: 1fr}
+    }
+
+    .miniCard{
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,.7);
+    }
+
+    .miniTitle{font-weight: 950; margin-bottom: 6px}
+    .muted{color: var(--muted)}
+
+    .hr{height:1px; background: rgba(15,23,42,.10); margin: 18px 0}
+
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 960px){
+      .kpi{grid-template-columns: 1fr}
+    }
+
+    .kpiBox{
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(2,132,199,.04);
+    }
+
+    .kpiBox .label{color: var(--muted2); font-weight:850; font-size: 13px}
+    .kpiBox .value{font-weight: 1000; font-size: 16px; margin-top: 2px}
+
+    .notice{
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+      border-left: 3px solid rgba(2,132,199,.55);
+      padding-left: 12px;
+    }
+
+    .footer{
+      margin: 26px 0 18px;
+      padding: 16px;
+      text-align:center;
+      color: var(--muted2);
+      border-top: 1px solid rgba(15,23,42,.10);
+    }
+
+    .announceLink{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(2,132,199,.20);
+      background: rgba(2,132,199,.06);
+      font-weight: 900;
+      margin-top: 12px;
+    }
+    .announceLink:hover{background: rgba(2,132,199,.10)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">ΣΑ</div>
+        <div>
+          ΣΑΔΛ
+          <small>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</small>
+        </div>
+      </div>
+
+      <nav class="navlinks">
+        <a href="index.html">Αρχική</a>
+        <a href="katastatiko.html">Καταστατικό</a>
+        <a href="anakoinoseis.html">Ανακοινώσεις</a>
+        <a href="mailto:sadlarisa2025@gmail.com" class="email">✉️ Email</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="heroGrid">
+
+        <section class="card">
+          <h1>
+            Σωματείο Ανεξάρτητων Διανομέων Λάρισας
+            <span style="color:var(--accent2)">(ΣΑΔΛ)</span>
+          </h1>
+
+          <div class="subtitle">
+            Είμαστε το σωματείο των <strong>freelancers / αυτοαπασχολούμενων διανομέων</strong> (delivery)
+            στην περιοχή του Δήμου Λαρισαίων.
+            Στόχος μας είναι η οργάνωση, η εκπροσώπηση και η στήριξη των μελών μας.
+          </div>
+
+          <a class="announceLink" href="anakoinoseis.html">📌 Δείτε τις Ανακοινώσεις</a>
+
+          <div class="badges">
+            <div class="badge"><strong>Μη κερδοσκοπικό</strong></div>
+            <div class="badge">Freelancers διανομείς</div>
+            <div class="badge">Έδρα: <strong>Λάρισα</strong></div>
+            <div class="badge">Σωματείο εργαζομένων delivery</div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="#contact">📩 Επικοινωνία</a>
+            <a class="btn btnGhost" href="katastatiko.html">📄 Διαβάστε το Καταστατικό</a>
+          </div>
+
+          <div class="notice">
+            Για πλήρεις λεπτομέρειες σχετικά με τη λειτουργία του σωματείου, ισχύει το επίσημο καταστατικό.
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2 style="margin:0 0 10px;">Βασικά στοιχεία</h2>
+
+          <div class="kpi">
+            <div class="kpiBox">
+              <div class="label">Επωνυμία</div>
+              <div class="value">Σωματείο Ανεξάρτητων Διανομέων Λάρισας</div>
+            </div>
+
+            <div class="kpiBox">
+              <div class="label">Διακριτικός τίτλος</div>
+              <div class="value">Σ.Α.Δ.Λ.</div>
+            </div>
+
+            <div class="kpiBox">
+              <div class="label">Έδρα</div>
+              <div class="value">Δήμος Λαρισαίων</div>
+            </div>
+
+            <div class="kpiBox">
+              <div class="label">Email</div>
+              <div class="value">sadlarisa2025@gmail.com</div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="muted">
+            <strong>Γρήγορη πλοήγηση:</strong>
+            <ul>
+              <li><a href="anakoinoseis.html" style="text-decoration:underline;">Ανακοινώσεις & αρχεία</a></li>
+              <li><a href="katastatiko.html" style="text-decoration:underline;">Καταστατικό</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+
+      <section class="section" id="about">
+        <div class="card">
+          <h2>Σχετικά με το ΣΑΔΛ</h2>
+          <p>
+            Το ΣΑΔΛ είναι σωματείο μη κερδοσκοπικού χαρακτήρα, που εκπροσωπεί τους
+            ανεξάρτητους διανομείς (freelancers) στην περιοχή της Λάρισας.
+            Δημιουργήθηκε για να ενισχύσει την αλληλεγγύη, την οργάνωση και τη συλλογική δράση
+            των μελών, με στόχο τη βελτίωση των επαγγελματικών και εργασιακών συνθηκών.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="goals">
+        <div class="card">
+          <h2>Σκοποί του Σωματείου</h2>
+          <p>
+            Οι βασικοί σκοποί του ΣΑΔΛ περιλαμβάνουν την ενότητα των μελών, την υπεράσπιση
+            δικαιωμάτων και την εκπροσώπηση σε φορείς και οργανισμούς.
+          </p>
+
+          <div class="grid3">
+            <div class="miniCard">
+              <div class="miniTitle">🤝 Οργάνωση & Αλληλεγγύη</div>
+              <div class="muted">Συνεργασία, ενότητα, συλλογική δράση των μελών.</div>
+            </div>
+
+            <div class="miniCard">
+              <div class="miniTitle">🛡️ Υπεράσπιση δικαιωμάτων</div>
+              <div class="muted">Εργασιακά, οικονομικά, ασφαλιστικά και επαγγελματικά.</div>
+            </div>
+
+            <div class="miniCard">
+              <div class="miniTitle">📣 Εκπροσώπηση & Παρεμβάσεις</div>
+              <div class="muted">Παρεμβάσεις σε αρχές, φορείς, οργανισμούς και πλατφόρμες.</div>
+            </div>
+          </div>
+
+          <div class="notice">
+            Το αναλυτικό πλαίσιο σκοπών και δράσεων περιγράφεται στο επίσημο καταστατικό.
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="card">
+          <h2>Επικοινωνία</h2>
+          <p>
+            Για εγγραφή, πληροφορίες, συνεργασίες ή θέματα που αφορούν τους ανεξάρτητους διανομείς,
+            μπορείτε να επικοινωνήσετε μαζί μας.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="grid3">
+            <div class="miniCard">
+              <div class="miniTitle">📍 Περιοχή</div>
+              <div class="muted">Λάρισα – Δήμος Λαρισαίων</div>
+            </div>
+
+            <div class="miniCard">
+              <div class="miniTitle">📧 Email</div>
+              <div class="muted">
+                <a href="mailto:sadlarisa2025@gmail.com" style="text-decoration:underline; font-weight:900;">
+                  sadlarisa2025@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="miniCard">
+              <div class="miniTitle">📱 Τηλέφωνο</div>
+              <div class="muted">(θα προστεθεί)</div>
+            </div>
+          </div>
+
+          <div class="notice">
+            Αν θέλεις, μπορώ να σου βάλω και κουμπί «Εγγραφή μέλους» που να οδηγεί σε Google Form.
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> ΣΑΔΛ – Σωματείο Ανεξάρτητων Διανομέων Λάρισας
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
