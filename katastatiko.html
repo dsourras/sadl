@@ -1,276 +1,60 @@
-<!-- katastatiko.html -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="el">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Καταστατικό – ΣΑΔΛ</title>
-  <meta name="description" content="Καταστατικό του Σωματείου Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ)." />
-  <style>
-    :root{
-      --bg:#f6f8fc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --muted2:#64748b;
-      --border:rgba(15,23,42,.10);
-      --shadow: 0 18px 60px rgba(15,23,42,.08);
-      --radius:20px;
-      --max: 980px;
-      --accent:#16a34a;
-      --accent2:#0284c7;
-      --accentSoft: rgba(2,132,199,.10);
-      --accentSoft2: rgba(22,163,74,.10);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(900px 520px at 10% 10%, var(--accentSoft2), transparent 60%),
-        radial-gradient(900px 520px at 90% 10%, var(--accentSoft), transparent 60%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding: 14px}
-
-    .nav{
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-      padding: 14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 10px;
-      z-index: 10;
-    }
-
-    .brand{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-      font-weight: 950;
-    }
-
-    .logo{
-      width: 92px;
-      height: 92px;
-      border-radius: 22px;
-      overflow: hidden;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(15,23,42,.10);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 14px 30px rgba(2,132,199,.10);
-      flex: 0 0 auto;
-    }
-
-    .logo img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 8px;
-      display:block;
-    }
-
-    .brandTitle{line-height: 1.1}
-    .brandTitle .name{font-size: 20px; letter-spacing: .2px}
-    .brandTitle .sub{display:block; margin-top: 3px; font-weight: 800; color: var(--muted2); font-size: 13px}
-
-    .navlinks{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      font-weight: 950;
-      color: var(--muted);
-    }
-
-    .navlinks a{
-      padding: 12px 10px;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.6);
-      transition: .18s ease;
-      text-align:center;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .navlinks a:active{transform: scale(.98)}
-
-    .card{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      margin-top: 14px;
-    }
-
-    h1{margin:0 0 8px; font-size: 24px; line-height: 1.2}
-    p{margin:0; color: var(--muted)}
-
-    .hr{height:1px; background: rgba(15,23,42,.10); margin: 16px 0}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 13px 14px;
-      border-radius: 18px;
-      font-weight: 1000;
-      border: 1px solid rgba(2,132,199,.20);
-      transition: .18s ease;
-      cursor: pointer;
-      user-select:none;
-      background: rgba(2,132,199,.06);
-      white-space: nowrap;
-      width: 100%;
-    }
-
-    .btn:active{transform: scale(.99)}
-    .btn:hover{background: rgba(2,132,199,.10)}
-
-    h2{margin:0 0 10px; font-size: 18px}
-
-    .two{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .miniCard{
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,.7);
-    }
-
-    .miniTitle{font-weight: 1000; margin-bottom: 6px}
-
-    .list{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .footer{
-      margin: 22px 0 16px;
-      padding: 14px;
-      text-align:center;
-      color: var(--muted2);
-      border-top: 1px solid rgba(15,23,42,.10);
-      font-size: 13px;
-    }
-
-    @media (min-width: 900px){
-      .nav{flex-direction: row; align-items:center; justify-content:space-between}
-      .navlinks{grid-template-columns: auto auto auto}
-      .wrap{padding: 18px}
-      .two{grid-template-columns: 1fr 1fr}
-      .btn{width:auto}
-    }
-  </style>
+  <title>Καταστατικό - ΣΑΔΛ</title>
+  <meta name="description" content="Συνοπτική παρουσίαση και πρόσβαση στο επίσημο καταστατικό του ΣΑΔΛ." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="wrap">
-
-    <header class="nav">
-      <div class="brand">
-        <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
-        <div class="brandTitle">
-          <div class="name">ΣΑΔΛ</div>
-          <span class="sub">Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span>
-        </div>
-      </div>
-
-      <nav class="navlinks">
+  <div class="site-shell">
+    <header class="topbar shell">
+      <a class="brand" href="index.html" aria-label="ΣΑΔΛ αρχική">
+        <span class="brand-mark"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></span>
+        <span class="brand-copy"><strong>ΣΑΔΛ</strong><span>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span></span>
+      </a>
+      <nav class="topnav" aria-label="Κύρια πλοήγηση">
         <a href="index.html">Αρχική</a>
-        <a href="katastatiko.html">Καταστατικό</a>
         <a href="anakoinoseis.html">Ανακοινώσεις</a>
+        <a class="is-active" href="katastatiko.html">Καταστατικό</a>
+        <a href="privacy.html">Privacy Policy</a>
       </nav>
     </header>
-
-    <main>
-      <section class="card">
-        <h1>Καταστατικό</h1>
-        <p>
-          Το πλήρες κείμενο του καταστατικού είναι διαθέσιμο στον παρακάτω σύνδεσμο.
-        </p>
-
-        <div class="hr"></div>
-
-       <a class="btn" href="katastatiko.pdf">📄 Άνοιγμα Καταστατικού (PDF)</a>
-
-
-        <div class="hr"></div>
-
-        <h2>Σύνοψη βασικών σημείων</h2>
-
-        <div class="two">
-          <div class="miniCard">
-            <div class="miniTitle">1) Ίδρυση – Επωνυμία – Έδρα</div>
-            <ul class="list">
-              <li>Μη κερδοσκοπικό σωματείο</li>
-              <li>Επωνυμία: Σωματείο Ανεξάρτητων Διανομέων Λάρισας</li>
-              <li>Διακριτικός τίτλος: Σ.Α.Δ.Λ.</li>
-              <li>Έδρα: Δήμος Λαρισαίων</li>
-            </ul>
-          </div>
-
-          <div class="miniCard">
-            <div class="miniTitle">2) Σκοποί</div>
-            <ul class="list">
-              <li>Οργάνωση και ενότητα των αυτοαπασχολούμενων διανομέων</li>
-              <li>Υπεράσπιση επαγγελματικών, οικονομικών και ασφαλιστικών δικαιωμάτων</li>
-              <li>Συλλογική δράση, παρεμβάσεις και ενημέρωση των μελών</li>
-            </ul>
-          </div>
-
-          <div class="miniCard">
-            <div class="miniTitle">3) Μέλη – Εγγραφή</div>
-            <ul class="list">
-              <li>Μέλη μπορούν να γίνουν freelancers διανομείς στην περιοχή Λάρισας</li>
-              <li>Η εγγραφή γίνεται με αίτηση και απόφαση Δ.Σ.</li>
-              <li>Τα μέλη έχουν δικαιώματα συμμετοχής, ψήφου, εκλογής</li>
-            </ul>
-          </div>
-
-          <div class="miniCard">
-            <div class="miniTitle">4) Όργανα του Σωματείου</div>
-            <ul class="list">
-              <li>Γενική Συνέλευση</li>
-              <li>Διοικητικό Συμβούλιο</li>
-              <li>Ελεγκτική Επιτροπή</li>
-            </ul>
-          </div>
-        </div>
-
+    <main class="shell">
+      <section class="page-hero card">
+        <span class="eyebrow">Θεσμικό πλαίσιο</span>
+        <h1>Καταστατικό ΣΑΔΛ</h1>
+        <p class="lead">Εδώ θα βρεις μια σύντομη περιγραφή του ρόλου του καταστατικού και άμεση πρόσβαση στο επίσημο αρχείο PDF.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="katastatiko.pdf" target="_blank" rel="noopener">Άνοιγμα PDF</a><a class="btn" href="katastatiko.pdf" download>Λήψη αρχείου</a></div>
       </section>
-
-      <footer class="footer">
-        © <span id="year2"></span> ΣΑΔΛ – Σωματείο Ανεξάρτητων Διανομέων Λάρισας
-      </footer>
+      <section class="grid-3 section-gap">
+        <article class="card mini-card"><h2>Σκοπός</h2><p>Το καταστατικό αποτυπώνει τη νομική και οργανωτική βάση λειτουργίας του σωματείου, τους στόχους του και το πλαίσιο συλλογικής δράσης.</p></article>
+        <article class="card mini-card"><h2>Μέλη</h2><p>Περιγράφει ποιοι μπορούν να συμμετέχουν, πώς γίνεται η εγγραφή και ποιες είναι οι βασικές υποχρεώσεις και τα δικαιώματα των μελών.</p></article>
+        <article class="card mini-card"><h2>Όργανα</h2><p>Καθορίζει τη λειτουργία της Γενικής Συνέλευσης, του Διοικητικού Συμβουλίου και των υπόλοιπων οργάνων του σωματείου.</p></article>
+      </section>
+      <section class="content-grid section-gap">
+        <article class="card prose-card">
+          <h2>Τι περιλαμβάνει το καταστατικό</h2>
+          <p>Το επίσημο καταστατικό του ΣΑΔΛ περιγράφει το πλαίσιο ίδρυσης, λειτουργίας και εκπροσώπησης του σωματείου. Αποτελεί το βασικό κείμενο αναφοράς για τη διοικητική δομή, τη διαδικασία λήψης αποφάσεων, τα οικονομικά ζητήματα και τη συμμετοχή των μελών.</p>
+          <p>Αν χρειάζεσαι το πλήρες νομικό κείμενο, χρησιμοποίησε τα παραπάνω κουμπιά για να ανοίξεις ή να κατεβάσεις το PDF. Η συνοπτική σελίδα εδώ δεν αντικαθιστά το επίσημο έγγραφο.</p>
+        </article>
+        <aside class="card sidebar-card">
+          <h2>Χρήσιμη σημείωση</h2>
+          <div class="note-box">Για πλήρη ακρίβεια σε διαδικαστικά ή νομικά ζητήματα, υπερισχύει πάντα το επίσημο αρχείο PDF του καταστατικού.</div>
+          <div class="contact-list">
+            <div class="contact-item"><span>Αρχείο</span><strong>katastatiko.pdf</strong></div>
+            <div class="contact-item"><span>Μορφή</span><strong>PDF</strong></div>
+            <div class="contact-item"><span>Χρήση</span><strong>Ανάγνωση ή λήψη</strong></div>
+          </div>
+        </aside>
+      </section>
     </main>
-
+    <footer class="site-footer shell">
+      <div>© <span id="year"></span> ΣΑΔΛ - Σωματείο Ανεξάρτητων Διανομέων Λάρισας</div>
+      <div class="footer-links"><a href="index.html">Αρχική</a><a href="anakoinoseis.html">Ανακοινώσεις</a><a href="katastatiko.html">Καταστατικό</a><a href="privacy.html">Privacy Policy</a></div>
+    </footer>
   </div>
-
-  <script>
-    document.getElementById("year2").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

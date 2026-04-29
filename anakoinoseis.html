@@ -1,486 +1,90 @@
-<!-- anakoinoseis.html -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="el">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ανακοινώσεις – ΣΑΔΛ</title>
-  <meta name="description" content="Ανακοινώσεις του Σωματείου Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ)." />
-  <style>
-    :root{
-      --bg:#f6f8fc;
-      --card:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --muted2:#64748b;
-      --border:rgba(15,23,42,.10);
-      --shadow: 0 18px 60px rgba(15,23,42,.08);
-      --radius:20px;
-      --max: 980px;
-      --accent:#16a34a;
-      --accent2:#0284c7;
-      --accentSoft: rgba(2,132,199,.10);
-      --accentSoft2: rgba(22,163,74,.10);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(900px 520px at 10% 10%, var(--accentSoft2), transparent 60%),
-        radial-gradient(900px 520px at 90% 10%, var(--accentSoft), transparent 60%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding: 14px}
-
-    .nav{
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-      padding: 14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 10px;
-      z-index: 10;
-    }
-
-    .brand{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-      font-weight: 950;
-    }
-
-    .logo{
-      width: 92px;
-      height: 92px;
-      border-radius: 22px;
-      overflow: hidden;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(15,23,42,.10);
-      display:grid;
-      place-items:center;
-      box-shadow: 0 14px 30px rgba(2,132,199,.10);
-      flex: 0 0 auto;
-    }
-
-    .logo img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 8px;
-      display:block;
-    }
-
-    .brandTitle{line-height: 1.1}
-    .brandTitle .name{font-size: 20px; letter-spacing: .2px}
-    .brandTitle .sub{display:block; margin-top: 3px; font-weight: 800; color: var(--muted2); font-size: 13px}
-
-    .navlinks{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      font-weight: 950;
-      color: var(--muted);
-    }
-
-    .navlinks a{
-      padding: 12px 10px;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.6);
-      transition: .18s ease;
-      text-align:center;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .navlinks a:active{transform: scale(.98)}
-
-    .card{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      margin-top: 14px;
-    }
-
-    h1{margin:0 0 8px; font-size: 24px; line-height: 1.2}
-    p{margin:0; color: var(--muted)}
-
-    .hr{height:1px; background: rgba(15,23,42,.10); margin: 16px 0}
-
-    .notice{
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 12px;
-      border-left: 3px solid rgba(2,132,199,.55);
-      padding-left: 12px;
-    }
-
-    .filters{
-      border: 1px solid rgba(15,23,42,.10);
-      border-radius: 18px;
-      padding: 14px;
-      background: rgba(2,132,199,.03);
-      margin-top: 14px;
-    }
-
-    .filterRow{
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    label{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      font-weight:900;
-      color: var(--muted2);
-      font-size: 13px
-    }
-
-    select, input{
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(15,23,42,.12);
-      background: rgba(255,255,255,.85);
-      outline: none;
-      font-weight: 900;
-      color: var(--text);
-      width: 100%;
-    }
-
-    .btnSmall{
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(2,132,199,.20);
-      background: rgba(2,132,199,.06);
-      font-weight: 1000;
-      cursor:pointer;
-      width: 100%;
-    }
-
-    .btnSmall:active{transform: scale(.99)}
-
-    .annGrid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .ann{
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,.7);
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .ann .title{font-weight: 1000; margin-bottom: 4px}
-    .ann .meta{color: var(--muted2); font-weight: 850; font-size: 13px}
-    .ann .desc{
-  color: var(--muted);
-  margin-top: 8px;
-  white-space: pre-line;
-}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 13px 14px;
-      border-radius: 18px;
-      font-weight: 1000;
-      border: 1px solid rgba(2,132,199,.20);
-      transition: .18s ease;
-      cursor: pointer;
-      user-select:none;
-      background: rgba(2,132,199,.06);
-      white-space: nowrap;
-      width: 100%;
-    }
-
-    .btn:active{transform: scale(.99)}
-
-    .footer{
-      margin: 22px 0 16px;
-      padding: 14px;
-      text-align:center;
-      color: var(--muted2);
-      border-top: 1px solid rgba(15,23,42,.10);
-      font-size: 13px;
-    }
-
-    @media (min-width: 900px){
-      .nav{flex-direction: row; align-items:center; justify-content:space-between}
-      .navlinks{grid-template-columns: auto auto auto}
-      .wrap{padding: 18px}
-      .filterRow{flex-direction: row; align-items:flex-end; flex-wrap:wrap}
-      .btnSmall{width:auto}
-      .ann{flex-direction: row; justify-content:space-between; align-items:flex-start}
-      .btn{width:auto}
-    }
-  </style>
+  <title>Ανακοινώσεις - ΣΑΔΛ</title>
+  <meta name="description" content="Ανακοινώσεις και επίσημες ενημερώσεις του Σωματείου Ανεξάρτητων Διανομέων Λάρισας." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="wrap">
-
-    <header class="nav">
-      <div class="brand">
-        <div class="logo"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></div>
-        <div class="brandTitle">
-          <div class="name">ΣΑΔΛ</div>
-          <span class="sub">Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span>
-        </div>
-      </div>
-
-      <nav class="navlinks">
+  <div class="site-shell">
+    <header class="topbar shell">
+      <a class="brand" href="index.html" aria-label="ΣΑΔΛ αρχική">
+        <span class="brand-mark"><img src="photo.jpg" alt="Λογότυπο ΣΑΔΛ" /></span>
+        <span class="brand-copy"><strong>ΣΑΔΛ</strong><span>Σωματείο Ανεξάρτητων Διανομέων Λάρισας</span></span>
+      </a>
+      <nav class="topnav" aria-label="Κύρια πλοήγηση">
         <a href="index.html">Αρχική</a>
+        <a class="is-active" href="anakoinoseis.html">Ανακοινώσεις</a>
         <a href="katastatiko.html">Καταστατικό</a>
-        <a href="anakoinoseis.html">Ανακοινώσεις</a>
+        <a href="privacy.html">Privacy Policy</a>
       </nav>
     </header>
-
-    <main>
-      <section class="card">
-        <h1>Ανακοινώσεις</h1>
-
-        <div class="filters">
-          <div class="filterRow">
-            <label>
-              Έτος
-              <select id="year">
-                <option value="all">Όλα</option>
-                <option value="2026">2026</option>
-                <option value="2025">2025</option>
-              </select>
-            </label>
-
-            <label>
-              Μήνας
-              <select id="month">
-                <option value="all">Όλοι</option>
-                <option value="01">Ιανουάριος</option>
-                <option value="02">Φεβρουάριος</option>
-                <option value="03">Μάρτιος</option>
-                <option value="04">Απρίλιος</option>
-                <option value="05">Μάιος</option>
-                <option value="06">Ιούνιος</option>
-                <option value="07">Ιούλιος</option>
-                <option value="08">Αύγουστος</option>
-                <option value="09">Σεπτέμβριος</option>
-                <option value="10">Οκτώβριος</option>
-                <option value="11">Νοέμβριος</option>
-                <option value="12">Δεκέμβριος</option>
-              </select>
-            </label>
-
-            <label>
-              Αναζήτηση
-              <input id="q" type="search" placeholder="Ψάξε τίτλο ή λέξεις…" />
-            </label>
-
-            <button class="btnSmall" id="clearBtn" type="button">Καθαρισμός</button>
-          </div>
-
-          <div class="notice" style="margin-top:12px;">
-            Φίλτραρε τις ανακοινώσεις ανά έτος/μήνα ή κάνε αναζήτηση.
-          </div>
+    <main class="shell">
+      <section class="page-hero card">
+        <span class="eyebrow">Επίσημη ενημέρωση</span>
+        <h1>Ανακοινώσεις ΣΑΔΛ</h1>
+        <p class="lead">Συγκεντρωμένες παρεμβάσεις, καλέσματα, αποφάσεις και βασικές ενημερώσεις του σωματείου σε ένα καθαρό αρχείο δημοσιεύσεων.</p>
+      </section>
+      <section class="card filters-card">
+        <div class="filters-grid">
+          <label>Έτος<select id="yearFilter"><option value="all">Όλα</option><option value="2026">2026</option></select></label>
+          <label>Μήνας<select id="monthFilter"><option value="all">Όλοι</option><option value="02">Φεβρουάριος</option></select></label>
+          <label class="search-field">Αναζήτηση<input id="queryFilter" type="search" placeholder="Λέξεις-κλειδιά, συνάντηση, αποχή, συνέλευση..." /></label>
+          <button class="btn" id="clearFilters" type="button">Καθαρισμός φίλτρων</button>
         </div>
-
-        <div class="hr"></div>
-
-        <div class="annGrid" id="annGrid">
-
-          <!-- Ανακοίνωση 2 -->
-  <div class="ann" data-year="2026" data-month="02">
-    <div>
-      <div class="title">Συναάντηση ΣΑΔΛ με την βουλευτή Λάρισας κ. Ευαγγελία Λιακούλη</div>
-      <div class="meta">Ημερομηνία: 19/02/2026</div>
-      <div class="desc">
-Σας ενημερώνουμε ότι σήμερα μέλη του Διοικητικού Συμβουλίου του Σωματείου Ανεξάρτητων Διανομέων Λάρισας (ΣΑΔΛ) πραγματοποίησαν συνάντηση με τη Βουλευτή Λάρισας του ΠΑΣΟΚ – Κινήματος Αλλαγής, Ευαγγελία Λιακούλη.
-
-Η συνάντηση πραγματοποιήθηκε στο πλαίσιο των θεσμικών παρεμβάσεων του Σωματείου μας για τα κρίσιμα ζητήματα που απασχολούν τον κλάδο και αφορούν τη συνεργασία μας με τις πλατφόρμες διανομής eFood, Wolt και Box.
-
-🔹 Πλαίσιο συνεργασίας
-
-Παρουσιάστηκε αναλυτικά το ισχύον καθεστώς συνεργασίας με τις πλατφόρμες, καθώς και τα προβλήματα που έχουν προκύψει το τελευταίο διάστημα.
-
-Τονίστηκαν:
-Οι συνεχείς και μονομερείς αλλαγές στους όρους συνεργασίας
-Η έλλειψη σταθερών, σαφών και προβλέψιμων όρων σύμβασης
-Η μη κατοχύρωση ουσιωδών όρων, όπως οι αμοιβές και ο τρόπος υπολογισμού τους
-Η γενικότερη οικονομική και επαγγελματική ανασφάλεια των διανομέων
-
-🔹 Αμοιβές – Αλγόριθμος – Κυρώσεις
-
-Ιδιαίτερη έμφαση δόθηκε στο ζήτημα των αμοιβών και της συνολικής πολιτικής που εφαρμόζουν οι πλατφόρμες.
-Επισημάνθηκε ότι παρατηρούνται μονομερείς μειώσεις στις αμοιβές, χωρίς προηγούμενη ενημέρωση ή διαπραγμάτευση, γεγονός που δημιουργεί συνθήκες αβεβαιότητας για τους συνεργάτες.
-
-Παράλληλα, επισημάνθηκε ότι πρακτικές όπως:
-Η επιβολή ποινών
-Η επιβολή περιορισμών
-Η επιβολή κυρώσεων μέσω αλγοριθμικών μηχανισμών
-ενδέχεται, σε συνδυασμό με τις μονομερείς μεταβολές στις αμοιβές, να υποκρύπτουν στοιχεία εξαρτημένης σχέσης εργασίας.
-
- Το ζήτημα τέθηκε ως σοβαρό θέμα προς θεσμική και νομική εξέταση.
-
-Τονίστηκε επίσης ότι δεν υφίσταται επίσημος και διαφανής πίνακας αμοιβών και υπογραμμίστηκε η ανάγκη να καταρτιστεί πίνακας αμοιβών κατόπιν διαπραγμάτευσης με το Σωματείο.
-
-🔹 Ζήτημα δεσπόζουσας θέσης
-
-Τέθηκε ρητά το θέμα της ενδεχόμενης κατάχρησης δεσπόζουσας θέσης στην αγορά από τις εταιρείες πλατφορμών διανομής, και ειδικότερα από τις eFood, Wolt και Box.
-
-Το θέμα αυτό αναδείχθηκε ως κρίσιμο για τη διασφάλιση υγιούς ανταγωνισμού και δίκαιων όρων συνεργασίας.
-
-🔹 Πρόταση για συλλογική σύμβαση συνεργατών
-
-Στο πλαίσιο της συζήτησης, η κα Ευαγγελία Λιακούλη αναφέρθηκε σε μία ιδιότυπη μορφή συλλογικής σύμβασης για ελεύθερους επαγγελματίες, συνεργάτες και freelancers.
-
-Δεσμεύτηκε ότι θα μας ενημερώσει εκτενέστερα για το θεσμικό πλαίσιο, επισημαίνοντας τη σημασία μιας τέτοιας πρωτοβουλίας για την ενίσχυση της διαπραγματευτικής μας ισχύος απέναντι στις πλατφόρμες.
-
-🔹 Παρέμβαση στη Βουλή
-
-Η κα Λιακούλη ανταποκρίθηκε θετικά στα αιτήματα που τέθηκαν και μας ενημέρωσε ότι:
-Θα καταθέσει σχετικές ερωτήσεις στη Βουλή
-Θα ζητήσει επίσημες απαντήσεις από τα αρμόδια Υπουργεία
-Θα μας ενημερώσει άμεσα για τις εξελίξεις και τις απαντήσεις που θα λάβει
-Στη συνάντηση επιβεβαιώθηκε η πρόθεση συνέχισης των επαφών σε θεσμικό επίπεδο, καθώς και η ανάγκη ενότητας και συντονισμένης δράσης.
-
-Ο κλάδος μας βρίσκεται σε κρίσιμο σημείο και απαιτείται οργανωμένη εκπροσώπηση, τεκμηριωμένες παρεμβάσεις και σταθερή, συλλογική διεκδίκηση.
-
-Παραμένουμε σε διαρκή επικοινωνία και θα υπάρξει νέα ενημέρωση μόλις προκύψουν επίσημες εξελίξεις.
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-  <!-- Ανακοίνωση 1 -->
-  <div class="ann" data-year="2026" data-month="02">
-    <div>
-      <div class="title">Aποχή Πέμπτη 12-2-2026</div>
-      <div class="meta">Ημερομηνία: 12/02/2026</div>
-      <div class="desc">
-Όπως προέκυψε από το αποτέλεσμα της ψηφοφορίας, την Πέμπτη θα προχωρήσουμε σε αποχή.
-
-Στο πλαίσιο αυτό, θα πραγματοποιηθεί συνάντηση με σκοπό τον συντονισμό και την υποστήριξη των αιτημάτων μας προς τις πλατφόρμες, καθώς και για την από κοινού διεκδίκησή τους.
-
-Το σημείο συνάντησης ορίζεται στον Άγιο Βελισάριο και ώρα 17:00.
-
-Παρακαλούνται όλοι οι συμμετέχοντες να παρευρεθούν εγκαίρως.
-
-Σημειώνεται ότι στη συνάντηση θα παρευρεθούν και εκπρόσωποι των Μέσων Μαζικής Ενημέρωσης.
-      </div>
-    </div>
-  </div>
-
-  <!-- Ανακοίνωση 2 -->
-  <div class="ann" data-year="2026" data-month="02">
-    <div>
-      <div class="title">Γενική Συνέλευση</div>
-      <div class="meta">Ημερομηνία: 17/02/2026</div>
-      <div class="desc">
-Το Διοικητικό Συμβούλιο του Σωματείου μας έχει την τιμή να σας προσκαλέσει στην έκτακτη Γενική Συνέλευση, η οποία θα πραγματοποιηθεί την Τρίτη, 17 Φεβρουαρίου 2026, και ώρα 17:30, στην αίθουσα του εντευκτηρίου του Επιμελητηρίου Λάρισας, που βρίσκεται στον τρίτο όροφο.
-
-Λόγω της σημασίας των θεμάτων της ημερήσιας διάταξης, η παρουσία όλων των μελών κρίνεται ιδιαίτερα σημαντική.
-
-Τα θέματα που θα συζητηθούν είναι τα εξής:
-
-1. Ενημέρωση των μελών για διαδικαστικά θέματα του Σωματείου
-2. Ενημέρωση από τον Πρόεδρο του Σωματείου Βόλου κ. Νίκο Στουκα
-3. Λοιπά θέματα
-
-Με τιμή,
-Ο ΠΡΟΕΔΡΟΣ
-ΜΠΕΓΑΣ ΛΑΜΠΕΡΤΟΣ
-
-Ο ΓΕΝΙΚΟΣ ΓΡΑΜΜΑΤΕΑΣ
-ΚΩΣΤΑΔΗΜΑΣ
-      </div>
-    </div>
-  </div>
-
-</div>
-
-        
-
- 
-      <footer class="footer">
-        © <span id="year3"></span> ΣΑΔΛ – Σωματείο Ανεξάρτητων Διανομέων Λάρισας
-      </footer>
+      </section>
+      <section class="announcements-grid" id="announcements">
+        <article class="card announcement" data-year="2026" data-month="02">
+          <div class="announcement-meta"><span>19/02/2026</span><span>Θεσμική συνάντηση</span></div>
+          <h2>Συνάντηση ΣΑΔΛ με τη βουλευτή Λάρισας Ευαγγελία Λιακούλη</h2>
+          <p>Μέλη του Διοικητικού Συμβουλίου του ΣΑΔΛ πραγματοποίησαν συνάντηση με τη βουλευτή Λάρισας του ΠΑΣΟΚ - Κινήματος Αλλαγής, Ευαγγελία Λιακούλη, στο πλαίσιο θεσμικών παρεμβάσεων για τα κρίσιμα ζητήματα που αφορούν τη συνεργασία των διανομέων με τις πλατφόρμες eFood, Wolt και Box.</p>
+          <p>Στη συνάντηση παρουσιάστηκαν τα προβλήματα από τις μονομερείς αλλαγές στους όρους συνεργασίας, οι πιέσεις στις αμοιβές, οι αλγοριθμικές κυρώσεις και η ανάγκη ύπαρξης διαφανούς πλαισίου αμοιβών και συλλογικής διαπραγμάτευσης.</p>
+          <p>Τέθηκε επίσης το ζήτημα της πιθανής κατάχρησης δεσπόζουσας θέσης από τις πλατφόρμες και ζητήθηκε θεσμική και νομική διερεύνηση. Η βουλευτής δεσμεύτηκε να προχωρήσει σε σχετικές κοινοβουλευτικές ενέργειες και να ενημερώσει το σωματείο για τις εξελίξεις.</p>
+        </article>
+        <article class="card announcement" data-year="2026" data-month="02">
+          <div class="announcement-meta"><span>17/02/2026</span><span>Γενική συνέλευση</span></div>
+          <h2>Έκτακτη Γενική Συνέλευση</h2>
+          <p>Το Διοικητικό Συμβούλιο του ΣΑΔΛ κάλεσε τα μέλη σε έκτακτη Γενική Συνέλευση την Τρίτη 17 Φεβρουαρίου 2026 και ώρα 17:30 στην αίθουσα του εντευκτηρίου του Επιμελητηρίου Λάρισας.</p>
+          <p>Στην ημερήσια διάταξη συμπεριλήφθηκαν ενημέρωση για δικαστικά θέματα, ενημέρωση από το Σωματείο Βόλου και συζήτηση για τα επόμενα οργανωτικά βήματα του σωματείου.</p>
+        </article>
+        <article class="card announcement" data-year="2026" data-month="02">
+          <div class="announcement-meta"><span>12/02/2026</span><span>Κάλεσμα</span></div>
+          <h2>Αποχή την Πέμπτη 12/02/2026</h2>
+          <p>Με βάση το αποτέλεσμα της ψηφοφορίας, αποφασίστηκε αποχή με στόχο τη συντονισμένη προβολή των αιτημάτων των διανομέων προς τις πλατφόρμες.</p>
+          <p>Ορίστηκε σημείο συνάντησης στον Άγιο Βελισάριο στις 17:00 και ζητήθηκε η έγκαιρη παρουσία των συμμετεχόντων. Στη συνάντηση θα παρευρίσκονταν και εκπρόσωποι των μέσων ενημέρωσης.</p>
+        </article>
+      </section>
     </main>
-
+    <footer class="site-footer shell">
+      <div>© <span id="year"></span> ΣΑΔΛ - Σωματείο Ανεξάρτητων Διανομέων Λάρισας</div>
+      <div class="footer-links"><a href="index.html">Αρχική</a><a href="anakoinoseis.html">Ανακοινώσεις</a><a href="katastatiko.html">Καταστατικό</a><a href="privacy.html">Privacy Policy</a></div>
+    </footer>
   </div>
-
   <script>
-    document.getElementById("year3").textContent = new Date().getFullYear();
-
-    const yearEl = document.getElementById("year");
-    const monthEl = document.getElementById("month");
-    const qEl = document.getElementById("q");
-    const clearBtn = document.getElementById("clearBtn");
-    const grid = document.getElementById("annGrid");
-
-    function norm(s){
-      return String(s || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/\p{Diacritic}/gu, "");
-    }
-
-    function applyFilters(){
-      const y = yearEl ? yearEl.value : "all";
-      const m = monthEl ? monthEl.value : "all";
-      const q = norm(qEl ? qEl.value : "");
-
-      const items = grid ? grid.querySelectorAll(".ann") : [];
-
-      items.forEach(el => {
-        const ey = el.getAttribute("data-year") || "";
-        const em = el.getAttribute("data-month") || "";
-        const text = norm(el.innerText);
-
-        const okYear = (y === "all") || (ey === y);
-        const okMonth = (m === "all") || (em === m);
-        const okQ = (!q) || text.includes(q);
-
-        el.style.display = (okYear && okMonth && okQ) ? "flex" : "none";
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearFilter = document.getElementById('yearFilter');
+    const monthFilter = document.getElementById('monthFilter');
+    const queryFilter = document.getElementById('queryFilter');
+    const clearFilters = document.getElementById('clearFilters');
+    const cards = [...document.querySelectorAll('.announcement')];
+    const normalize = (value) => String(value || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+    const applyFilters = () => {
+      const selectedYear = yearFilter.value;
+      const selectedMonth = monthFilter.value;
+      const query = normalize(queryFilter.value);
+      cards.forEach((card) => {
+        const matchesYear = selectedYear === 'all' || card.dataset.year === selectedYear;
+        const matchesMonth = selectedMonth === 'all' || card.dataset.month === selectedMonth;
+        const matchesQuery = query.length === 0 || normalize(card.innerText).includes(query);
+        card.style.display = matchesYear && matchesMonth && matchesQuery ? 'block' : 'none';
       });
-    }
-
-    if(yearEl) yearEl.addEventListener("change", applyFilters);
-    if(monthEl) monthEl.addEventListener("change", applyFilters);
-    if(qEl) qEl.addEventListener("input", applyFilters);
-
-    if(clearBtn) clearBtn.addEventListener("click", () => {
-      if(yearEl) yearEl.value = "all";
-      if(monthEl) monthEl.value = "all";
-      if(qEl) qEl.value = "";
-      applyFilters();
-    });
-
-    applyFilters();
+    };
+    yearFilter.addEventListener('change', applyFilters);
+    monthFilter.addEventListener('change', applyFilters);
+    queryFilter.addEventListener('input', applyFilters);
+    clearFilters.addEventListener('click', () => { yearFilter.value = 'all'; monthFilter.value = 'all'; queryFilter.value = ''; applyFilters(); });
   </script>
 </body>
 </html>
